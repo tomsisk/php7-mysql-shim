@@ -235,7 +235,7 @@ namespace {
                 list($table, $name) =  explode(".", $field);
                 $i = 0;
                 $found = false;
-		        mysqli_field_seek($result, 0);
+                mysqli_field_seek($result, 0);
                 while ($column = mysqli_fetch_field($result)) {
                     if ($column->table == $table && $column->name == $name) {
                         $field = $i;
@@ -535,74 +535,74 @@ namespace {
 
         /* Aliases */
 
-        function mysql_fieldname(... $args)
+        function mysql_fieldname()
         {
-            return mysql_field_name(... $args);
+            return call_user_func_array('mysql_field_name', func_get_args());
         }
 
-        function mysql_fieldtable(... $args)
+        function mysql_fieldtable()
         {
-            return mysql_field_table(... $args);
+            return call_user_func_array('mysql_field_table', func_get_args());
         }
 
-        function mysql_fieldlen(... $args)
+        function mysql_fieldlen()
         {
-            return mysql_field_len(... $args);
+            return call_user_func_array('mysql_field_len', func_get_args());
         }
 
-        function mysql_fieldtype(... $args)
+        function mysql_fieldtype()
         {
-            return mysql_field_type(... $args);
+            return call_user_func_array('mysql_field_type', func_get_args());
         }
 
-        function mysql_fieldflags(... $args)
+        function mysql_fieldflags()
         {
-            return mysql_field_flags(... $args);
+            return call_user_func_array('mysql_field_flags', func_get_args());
         }
 
-        function mysql_selectdb(... $args)
+        function mysql_selectdb()
         {
-            return mysql_select_db(... $args);
+            return call_user_func_array('mysql_select_db', func_get_args());
         }
 
-        function mysql_freeresult(... $args)
+        function mysql_freeresult()
         {
-            return mysql_free_result(... $args);
+            return call_user_func_array('mysql_free_result', func_get_args());
         }
 
-        function mysql_numfields(... $args)
+        function mysql_numfields()
         {
-            return mysql_num_fields(... $args);
+            return call_user_func_array('mysql_num_fields', func_get_args());
         }
 
-        function mysql_numrows(... $args)
+        function mysql_numrows()
         {
-            return mysql_num_rows(... $args);
+            return call_user_func_array('mysql_num_rows', func_get_args());
         }
 
-        function mysql_listdbs(... $args)
+        function mysql_listdbs()
         {
-            return mysql_list_dbs(... $args);
+            return call_user_func_array('mysql_list_dbs', func_get_args());
         }
 
-        function mysql_listtables(... $args)
+        function mysql_listtables()
         {
-            return mysql_list_tables(... $args);
+            return call_user_func_array('mysql_list_tables', func_get_args());
         }
 
-        function mysql_listfields(... $args)
+        function mysql_listfields()
         {
-            return mysql_list_fields(... $args);
+            return call_user_func_array('mysql_list_fields', func_get_args());
         }
 
-        function mysql_dbname(... $args)
+        function mysql_dbname()
         {
-            return mysql_db_name(... $args);
+            return call_user_func_array('mysql_db_name', func_get_args());
         }
 
-        function mysql_table_name(... $args)
+        function mysql_table_name()
         {
-            return mysql_tablename(... $args);
+            return call_user_func_array('mysql_tablename', func_get_args());
         }
     }
 }
